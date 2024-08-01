@@ -18,7 +18,7 @@ import '../index.css';
 import { Pagination } from 'swiper/modules';
 
 const TopComponent = () => {
-    var a=[1,2,3]
+    var a=[1,2,3,4,5,6,7]
   return (
     <main>
      <section className='bg-[#F3F4F6] mx-5 px-[100px] py-8 flex flex-col gap-10 border-b '>
@@ -36,13 +36,15 @@ const TopComponent = () => {
                     </div>
                     {/* view part */}
                     <div className='flex items-center gap-5 bg-white border rounded-full px-5 py-2'>
-                        <p className='text-[20px]'>View All</p>
+                        <p className='text-[20px] cursor-pointer'>View All</p>
                         <FaArrowRight />
                     </div>
                     <Setting className='absolute right-[50px]'/>
                 </div>
 
-                <div className='flex items-center justify-between'>
+                <div className='flex items-center gap-10 overflow-scroll outline-none' 
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                >
                    
                    {
                     a.map((i)=>(

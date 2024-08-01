@@ -6,6 +6,7 @@ import HeadingSection from './components/HeadingSection'
 import Application from './components/Application'
 import Explore from './components/Explore'
 import Work from './components/Work'
+import Demo from './components/Demo'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
      <Application/>
      <Explore/>
      <Work/>
+     {/* <Demo/> */}
     </div >
   )
 }
