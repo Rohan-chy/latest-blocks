@@ -61,10 +61,10 @@ const HeadingSection = () => {
             >
                 {
                     a.map((i)=>(
-                        <div key={i} className='w-[250px] flex-none gap-4'>
-                    <img src={photo} alt="" className='w-full h-[300px] rounded-xl '/>
-                    <p className='text-[20px] font-semibold'>New York</p>
-                    <p className='text-[#6F727B]'>188,288 properties</p>
+                    <div key={i} className='w-[250px] flex-none gap-4'>
+                        <img src={photo} alt="" className='w-full h-[300px] rounded-xl '/>
+                        <p className='text-[20px] font-semibold mt-4'>New York</p>
+                        <p className='text-[#6F727B] mt-4'>188,288 properties</p>
                 </div>
                     ))
                 }

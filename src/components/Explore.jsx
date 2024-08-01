@@ -51,14 +51,14 @@ const Explore = () => {
 
       <div
         ref={scrollContainerRef}
-        className="w-full flex items-center gap-5 overflow-x-auto scrollbar-hide"
+        className="w-full flex items-center gap-10 overflow-x-auto scrollbar-hide"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {a.map((i, index) => (
           <div key={index} className="flex-none w-[250px]">
             <img src={photo} alt="" className="w-full h-[200px] object-cover rounded-xl" />
-            <p className="text-[20px] font-semibold mt-2">Nature House</p>
-            <p className="text-[#6F727B]">188,288 properties</p>
+            <p className="text-[20px] font-semibold mt-4">Nature House</p>
+            <p className="text-[#6F727B] mt-4">188,288 properties</p>
           </div>
         ))}
       </div>

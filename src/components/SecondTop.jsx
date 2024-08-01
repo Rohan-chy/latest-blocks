@@ -28,7 +28,7 @@ const SecondTop = () => {
         <div className='flex flex-col gap-10'>
            {
             a.map((i)=>(
-                <div key={i} className='flex items-center justify-between'>
+                <div key={i} className='flex items-center gap-5'>
 
                 {/* how AI */}
                 <div className='flex flex-col gap-5 w-[400px]'>
