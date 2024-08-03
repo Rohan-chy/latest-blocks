@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { FaArrowRight,FaStar } from "react-icons/fa6";
 import { CiLocationOn } from "react-icons/ci";
 import photo from '../assets/growth-hacking.jpg'
@@ -19,6 +19,26 @@ import { Pagination } from 'swiper/modules';
 
 const TopComponent = () => {
     var a=[1,2,3,4,5,6,7]
+
+    const scrollContainerRef = useRef(null);
+
+    const scrollLeft = () => {
+        if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollBy({
+                left: -250, // Adjust scroll amount as needed
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    const scrollRight = () => {
+        if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollBy({
+                left: 250, // Adjust scroll amount as needed
+                behavior: 'smooth'
+            });
+        }
+    };
   return (
     <main>
      <section className='bg-[#F3F4F6] mx-5 px-[100px] py-8 flex flex-col gap-10 border-b '>
@@ -35,8 +55,8 @@ const TopComponent = () => {
                     <p className='px-4 py-2   rounded-full text-[#6C727E]'>London</p>
                     </div>
                     {/* view part */}
-                    <div className='flex items-center gap-5 bg-white border rounded-full px-5 py-2'>
-                        <p className='text-[20px] cursor-pointer'>View All</p>
+                    <div className='flex items-center gap-5 bg-white border rounded-full px-5 py-2 cursor-pointer' onClick={scrollRight}>
+                        <p className='text-[20px]'>View All</p>
                         <FaArrowRight />
                     </div>
                     <Setting className='absolute right-[50px]'/>
@@ -44,11 +64,12 @@ const TopComponent = () => {
 
                 <div className='flex items-center gap-10 overflow-scroll outline-none' 
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                ref={scrollContainerRef}
                 >
                    
                    {
                     a.map((i)=>(
-                        <div key={i} className='flex flex-col gap-5 bg-white rounded-xl w-[350px] h-[450px] relative'>
+                        <div key={i} className='flex flex-col gap-5 bg-white rounded-xl w-[350px] h-[450px] relative' >
 
                             <button className='bg-[#B81C1D] w-[110px] h-[30px] text-white rounded-full absolute top-4 left-4'>-10% today</button>
                             <div className='absolute right-4 top-4 w-[40px] h-[40px] rounded-full bg-[#695952] flex items-center justify-center'>
@@ -98,7 +119,7 @@ const TopComponent = () => {
         </div>
     </section>
 
-   <Scroller/>
+   <Scroller scrollRight={scrollRight}  scrollLeft={scrollLeft}/>
     
     </main>
    
